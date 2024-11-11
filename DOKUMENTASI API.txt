@@ -1,0 +1,100 @@
+DOKUMENTASI API
+
+LOGIN
+POST /api/login?username=&password= HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 53
+Content-Type: text/plain; charset=utf-8
+Host: localhost:8080
+User-Agent: HTTPie
+
+{
+  "username": "gibran",
+  "password": "gibran123"
+}
+
+
+PRODUCT
+
+1. GET PRODUCT
+GET /api/products HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Host: localhost:8080
+User-Agent: HTTPie
+
+
+2. ADD PRODUCT
+POST /api/products?name=shampoo&description=shampoo+sunslik+harga+2000&availability=15&price=2000 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Content-Type: application/json
+Host: localhost:8080
+User-Agent: HTTPie
+
+3. UPDATE PRODUCT
+PUT /api/products/1?price=200000&description=sabun+mandi&name=gayung&availability=20 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Host: localhost:8080
+User-Agent: HTTPie
+
+4. DELETE PRODUCT
+DELETE /api/products/3 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Host: localhost:8080
+User-Agent: HTTPie
+
+
+WALLET
+
+1. GET WALLET
+GET /api/wallets/1?username=gibran&password=gibran123 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Host: localhost:8080
+User-Agent: HTTPie
+
+2. ADD WALLET
+POST /api/wallets?user_id=1&balance=500000&username=gibran&password=gibran123 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Host: localhost:8080
+User-Agent: HTTPie
+
+3. UPDATE WALLET
+PUT /api/wallets/1?balance=1000000&user_id=1&username=gibran&password=gibran123 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Host: localhost:8080
+User-Agent: HTTPie
+
+4. WITHDRAW WALLET
+POST /api/wallets/withdraw?username=gibran&password=gibran123&user_id=1&wallet_id=1&amount=100000 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Host: localhost:8080
+User-Agent: HTTPie
+
+5. DEPOSIT WALLET
+POST /api/wallets/deposit?username=gibran&password=gibran123&user_id=1&wallet_id=1&amount=100000 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Host: localhost:8080
+User-Agent: HTTPie
+
+
+TRANSACTION
+
+1. BUY PRODUCT
+POST /api/buy-product?username=gibran&password=gibran123&user_id=1&wallet_id=1&product_id=1&amount_product=2 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Host: localhost:8080
+User-Agent: HTTPie
+
+2. SELL PRODUCT
+POST /api/sell-product?username=gibran&password=gibran123&user_id=1&wallet_id=1&product_id=1&amount_product=5 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpYnJhbiIsImV4cCI6MTczMTI0MjE4OX0.FrLGYQnY51GrvsKGWk7-SUk5xk0WkNOZr-XokF9U8t8
+Content-Length: 0
+Host: localhost:8080
+User-Agent: HTTPie
+
